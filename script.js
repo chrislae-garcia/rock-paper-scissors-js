@@ -16,7 +16,7 @@ function computerPlay() {
 
 // Plays a single round between player and computer
 function playRound(playerSelection) {
-  let player = playerSelection.toUpperCase();
+  let player = playerSelection;
   let computer = computerPlay().toUpperCase();
 
   // Check if player and computer attacks are the same
@@ -69,9 +69,9 @@ function game() {
     } else {
       console.log('Draw');
     }
-    
+
   }
-  
+
   if (playerScore == computerScore) {
     console.log('Draw!');
   } else if (playerScore > computerScore) {
@@ -83,6 +83,12 @@ function game() {
   console.log('SCORE:\nPlayer: ' + playerScore + '. Computer: ' + computerScore + '.');
 }
 
-const playerSelection = 'Scissors';
+const playerSelection = prompt('Rock, paper, or scissors?').toUpperCase();
 
-console.log(game());
+if (!(playerSelection == 'ROCK'
+  || playerSelection == 'PAPER'
+  || playerSelection == 'SCISSORS')) {
+  console.log('Invalid player input');
+} else {
+  console.log(game());
+}
