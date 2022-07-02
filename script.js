@@ -15,34 +15,35 @@ function computerPlay() {
 }
 
 // Plays a single round between player and computer
-function playRound(playerSelection, computerSelection) {
+function playRound(playerSelection) {
   let player = playerSelection.toUpperCase();
-  let computer = computerSelection.toUpperCase();
+  let computer = computerPlay().toUpperCase();
 
   // Check if player and computer attacks are the same
+  // 0 = Player loses, 1 = Player wins, 2 = Draw
   if (player == computer) {
-    return 'Draw';
+    return 2;
   } else {
     // Check if the player is 'ROCK'
     if (player == 'ROCK') {
       if (computer == 'SCISSORS') {
-        return 'You win! Rock beats Scissors';
+        return 1;
       } else if (computer == 'PAPER') {
-        return 'You lose! Paper beats Rock';
+        return 0;
       }
-    // Check if the player is 'SCISSORS'
+      // Check if the player is 'SCISSORS'
     } else if (player == 'SCISSORS') {
       if (computer == 'PAPER') {
-        return 'You win! Scissors beat Paper';
+        return 1;
       } else if (computer == 'ROCK') {
-        return 'You lose! Rock beats Scissors';
+        return 0;
       }
-    // Check if the player is 'PAPER'
+      // Check if the player is 'PAPER'
     } else if (player == 'PAPER') {
       if (computer == 'ROCK') {
-        return 'You win! Paper beats rock';
+        return 1;
       } else if (computer == 'SCISSORS') {
-        return 'You lose! Scissors beat Paper';
+        return 0;
       }
     } else {
       return 'Something is wrong.';
@@ -50,8 +51,38 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-const playerSelection = 'Scissors';
-const computerSelection = computerPlay();
+function game() {
+  let playerScore = 0;
+  let computerScore = 0;
 
-console.log(playRound(playerSelection, computerSelection));
-console.log('Player: ' + playerSelection + ' | Computer: ' + computerSelection);
+  // Play for five rounds
+  for (let i = 0; i < 5; i++) {
+    let result = playRound(playerSelection);
+    // Check who wins the playRound()
+    // 1 = player won, 0 = player lose
+    if (result == 1) {
+      playerScore++;
+      console.log('Player wins the round');
+    } else if (result == 0) {
+      computerScore++;
+      console.log('Computer wins the round');
+    } else {
+      console.log('Draw');
+    }
+    
+  }
+  
+  if (playerScore == computerScore) {
+    console.log('Draw!');
+  } else if (playerScore > computerScore) {
+    console.log('Player wins!');
+  } else if (playerScore < computerScore) {
+    console.log('Computer wins!')
+  }
+
+  console.log('SCORE:\nPlayer: ' + playerScore + '. Computer: ' + computerScore + '.');
+}
+
+const playerSelection = 'Scissors';
+
+console.log(game());
