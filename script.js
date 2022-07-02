@@ -72,6 +72,7 @@ function game() {
 
   }
 
+  // Display overall game results
   if (playerScore == computerScore) {
     console.log('Draw!');
   } else if (playerScore > computerScore) {
@@ -80,11 +81,13 @@ function game() {
     console.log('Computer wins!')
   }
 
+  // Display overall score 
   console.log('SCORE:\nPlayer: ' + playerScore + '. Computer: ' + computerScore + '.');
 }
 
 const playerSelection = prompt('Rock, paper, or scissors?').toUpperCase();
 
+// Check if the user's input is valid or not
 if (!(playerSelection == 'ROCK'
   || playerSelection == 'PAPER'
   || playerSelection == 'SCISSORS')) {
