@@ -21,32 +21,27 @@ function playRound(playerSelection) {
 
   // Check if player and computer attacks are the same
   // 0 = Player loses, 1 = Player wins, 2 = Draw
-  if (player == computer) {
+  if (player == computer) { 
     return 2;
   } else {
     // Check if the player is 'ROCK'
     if (player == 'ROCK') {
-      if (computer == 'SCISSORS') {
-        return 1;
-      } else if (computer == 'PAPER') {
-        return 0;
+      switch (computer) {
+        case 'SCISSORS' : return 1;
+        case 'PAPER' : return 0;
       }
       // Check if the player is 'SCISSORS'
     } else if (player == 'SCISSORS') {
-      if (computer == 'PAPER') {
-        return 1;
-      } else if (computer == 'ROCK') {
-        return 0;
+      switch (computer) {
+        case 'PAPER' : return 1;
+        case 'ROCK' : return 0;
       }
       // Check if the player is 'PAPER'
     } else if (player == 'PAPER') {
-      if (computer == 'ROCK') {
-        return 1;
-      } else if (computer == 'SCISSORS') {
-        return 0;
+      switch (computer) {
+        case 'ROCK' : return 1;
+        case 'SCISSORS' : return 0;
       }
-    } else {
-      return 'Something is wrong.';
     }
   }
 }
