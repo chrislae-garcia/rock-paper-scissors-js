@@ -64,20 +64,23 @@ function playRound(playerSelection) {
   }
 }
 
+let playerScore = 0;
+let computerScore = 0;
+
 function displayWinner(winner) {
   console.log(winner);
   const divResult = document.createElement('div');
   
   if (winner == 1) {
+    playerScore++;
     divResult.textContent = 'Player wins!';
   } else if (winner == 0) {
+    computerScore++;
     divResult.textContent = 'Computer wins!';
   } else {
     divResult.textContent = 'Draw!';
   }
 
-  body.appendChild(divResult);
-}
 
 function game() {
   let playerScore = 0;
