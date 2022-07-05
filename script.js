@@ -95,6 +95,18 @@ function displayWinner(winner) {
 
 }
 
-btnRock.addEventListener('click', () => {playRound('ROCK')});
-btnPaper.addEventListener('click', () => {playRound('PAPER')});
-btnScissors.addEventListener('click', () => {playRound('SCISSORS')});
+btnRock.addEventListener('click', () => {
+  if ((playerScore < 5) && computerScore < 5){
+    playRound('ROCK');
+    console.log(`${playerScore}, ${computerScore}`);
+  }});
+btnPaper.addEventListener('click', () => {
+  if ((playerScore < 5) && computerScore < 5){
+    playRound('PAPER');
+    console.log(`${playerScore}, ${computerScore}`);
+  }});
+btnScissors.addEventListener('click', () => {
+  if ((playerScore < 5) && computerScore < 5){
+    playRound('SCISSORS');
+    console.log(`${playerScore}, ${computerScore}`);
+  }});
