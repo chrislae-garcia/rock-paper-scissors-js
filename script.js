@@ -67,20 +67,32 @@ function playRound(playerSelection) {
 
 let playerScore = 0;
 let computerScore = 0;
-
 function displayWinner(winner) {
   console.log(winner);
   const divResult = document.createElement('div');
   
   if (winner == 1) {
     playerScore++;
-    divResult.textContent = 'Player wins!';
+    divResult.textContent = `Player wins! Player: ${playerScore} | Computer: ${computerScore}`;
   } else if (winner == 0) {
     computerScore++;
-    divResult.textContent = 'Computer wins!';
+    divResult.textContent = `Computer wins! Player: ${playerScore} | Computer: ${computerScore}`;
   } else {
-    divResult.textContent = 'Draw!';
+    divResult.textContent = `Draw! Player: ${playerScore} | Computer: ${computerScore}`;
   }
+
+  if (playerScore == 5 || computerScore == 5){
+    if (playerScore > computerScore) {
+      divResult.textContent = `Player wins the game! Player: ${playerScore} | Computer: ${computerScore}`;
+    } else {
+      divResult.textContent = `Computer wins the game! Player:${playerScore} | Computer: ${computerScore}`;
+    }
+    body.appendChild(divResult);
+    
+  } else {
+    body.appendChild(divResult);
+  }
+
 }
 
 function game() {
