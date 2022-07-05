@@ -95,34 +95,6 @@ function displayWinner(winner) {
 
 }
 
-function game() {
-  let playerScore = 0;
-  let computerScore = 0;
-
-    // Display overall game results
-  if (playerScore == computerScore) {
-    console.log('Draw!');
-  } else if (playerScore > computerScore) {
-    console.log('Player wins!');
-  } else if (playerScore < computerScore) {
-    console.log('Computer wins!');
-  }
-
-  // Display overall score 
-  console.log('SCORE:\nPlayer: ' + playerScore + '. Computer: ' + computerScore + '.');
-}
-
-// const playerSelection = prompt('Rock, paper, or scissors?').toUpperCase();
-
-// Check if the user's input is valid or not
-// if (!(playerSelection == 'ROCK'
-//   || playerSelection == 'PAPER'
-//   || playerSelection == 'SCISSORS')) {
-//   console.log('Invalid player input');
-// } else {
-//   console.log(game());
-// }
-
 btnRock.addEventListener('click', () => {playRound('ROCK')});
 btnPaper.addEventListener('click', () => {playRound('PAPER')});
 btnScissors.addEventListener('click', () => {playRound('SCISSORS')});
