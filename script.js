@@ -73,3 +73,7 @@ function game() {
 // } else {
 //   console.log(game());
 // }
+
+const btnRock = document.getElementById('rock');
+const btnPaper = document.getElementById('paper');
+const btnScissors = document.getElementById('scissors');
