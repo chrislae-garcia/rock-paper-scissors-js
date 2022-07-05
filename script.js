@@ -50,23 +50,7 @@ function game() {
   let playerScore = 0;
   let computerScore = 0;
 
-  // Play for five rounds
-  for (let i = 1; i <= 5; i++) {
-    let result = playRound(playerSelection);
-    // Check who wins the playRound()
-    // 1 = player won, 0 = player lose
-    if (result == 1) {
-      playerScore++;
-      console.log(`Round ${i}: Player wins!`);
-    } else if (result == 0) {
-      computerScore++;
-      console.log(`Round ${i}: Computer wins!`);
-    } else {
-      console.log(`Round ${i}: Draw!`);
-    }
-  }
-
-  // Display overall game results
+    // Display overall game results
   if (playerScore == computerScore) {
     console.log('Draw!');
   } else if (playerScore > computerScore) {
