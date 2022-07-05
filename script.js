@@ -63,13 +63,13 @@ function game() {
   console.log('SCORE:\nPlayer: ' + playerScore + '. Computer: ' + computerScore + '.');
 }
 
-const playerSelection = prompt('Rock, paper, or scissors?').toUpperCase();
+// const playerSelection = prompt('Rock, paper, or scissors?').toUpperCase();
 
 // Check if the user's input is valid or not
-if (!(playerSelection == 'ROCK'
-  || playerSelection == 'PAPER'
-  || playerSelection == 'SCISSORS')) {
-  console.log('Invalid player input');
-} else {
-  console.log(game());
-}
+// if (!(playerSelection == 'ROCK'
+//   || playerSelection == 'PAPER'
+//   || playerSelection == 'SCISSORS')) {
+//   console.log('Invalid player input');
+// } else {
+//   console.log(game());
+// }
