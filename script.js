@@ -66,6 +66,17 @@ function playRound(playerSelection) {
 
 function displayWinner(winner) {
   console.log(winner);
+  const divResult = document.createElement('div');
+  
+  if (winner == 1) {
+    divResult.textContent = 'Player wins!';
+  } else if (winner == 0) {
+    divResult.textContent = 'Computer wins!';
+  } else {
+    divResult.textContent = 'Draw!';
+  }
+
+  body.appendChild(divResult);
 }
 
 function game() {
