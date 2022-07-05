@@ -1,3 +1,8 @@
+const body = document.querySelector('body');
+const btnRock = document.getElementById('rock');
+const btnPaper = document.getElementById('paper');
+const btnScissors = document.getElementById('scissors');
+
 // Randomly generate a string between 'Rock', 'Paper', and 'Scissors'
 function computerPlay() {
   // Generate a random number between 1 to 3
@@ -19,31 +24,48 @@ function playRound(playerSelection) {
   let player = playerSelection;
   let computer = computerPlay().toUpperCase();
 
+  console.log(playerSelection);
+
   // Check if player and computer attacks are the same
   // 0 = Player loses, 1 = Player wins, 2 = Draw
   if (player == computer) { 
-    return 2;
+    displayWinner(2);
   } else {
     // Check if the player is 'ROCK'
     if (player == 'ROCK') {
       switch (computer) {
-        case 'SCISSORS' : return 1;
-        case 'PAPER' : return 0;
+        case 'SCISSORS': 
+          displayWinner(1);
+          break;
+        case 'PAPER' : 
+          displayWinner(0);
+          break;
       }
       // Check if the player is 'SCISSORS'
     } else if (player == 'SCISSORS') {
       switch (computer) {
-        case 'PAPER' : return 1;
-        case 'ROCK' : return 0;
+        case 'PAPER' : 
+          displayWinner(1);
+          break;
+        case 'ROCK' : 
+          displayWinner(0);
+          break;
       }
       // Check if the player is 'PAPER'
     } else if (player == 'PAPER') {
       switch (computer) {
-        case 'ROCK' : return 1;
-        case 'SCISSORS' : return 0;
+        case 'ROCK' : 
+          displayWinner(1);
+          break;
+        case 'SCISSORS' : 
+          displayWinner(0);
       }
     }
   }
+}
+
+function displayWinner(winner) {
+  console.log(winner);
 }
 
 function game() {
@@ -74,6 +96,6 @@ function game() {
 //   console.log(game());
 // }
 
-const btnRock = document.getElementById('rock');
-const btnPaper = document.getElementById('paper');
-const btnScissors = document.getElementById('scissors');
+btnRock.addEventListener('click', () => {playRound('ROCK')});
+btnPaper.addEventListener('click', () => {playRound('PAPER')});
+btnScissors.addEventListener('click', () => {playRound('SCISSORS')});
