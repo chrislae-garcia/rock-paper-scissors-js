@@ -64,6 +64,7 @@ function playRound(playerSelection) {
   }
 }
 
+
 let playerScore = 0;
 let computerScore = 0;
 
@@ -80,7 +81,7 @@ function displayWinner(winner) {
   } else {
     divResult.textContent = 'Draw!';
   }
-
+}
 
 function game() {
   let playerScore = 0;
